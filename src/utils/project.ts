@@ -1,4 +1,4 @@
-import { workspaces } from '@angular-devkit/core';
+import { JsonObject, workspaces } from '@angular-devkit/core';
 
 export const checkProjectType = (project: workspaces.ProjectDefinition, checkType: string): boolean => {
     return project.extensions.projectType === checkType;
@@ -11,7 +11,11 @@ export const checkProjectType = (project: workspaces.ProjectDefinition, checkTyp
 //         && !!(((project.extensions.architect as JsonObject).build as JsonObject).options as JsonObject).outputPath;
 // };
 export const checkTargetOption = (project: workspaces.ProjectDefinition, target: string, option: string): boolean => {
-    return !!project.targets.get(target)?.options && !!project.targets.get(target)?.options[option];
+    if (project.targets.get(target)?.options === null) {
+        return false;
+    }
+    const options = (project.targets.get(target)?.options as JsonObject);
+    return options.option !== null;
 };
 
 // export const addArchitect = (project: workspaces.ProjectDefinition, architect: string, builder: string, options: any): void => {
