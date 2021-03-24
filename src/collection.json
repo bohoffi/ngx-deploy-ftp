@@ -1,0 +1,12 @@
+{
+    "$schema": "@angular-devkit/schematics/collection-schema.json",
+    "schematics": {
+      "ng-add": {
+        "description": "Add ngx-deploy-ftp deploy schematic",
+        "factory": "./ng-add/ng-add#ngAdd",
+        "schema": "./schema/ng-add-schema.json",
+        "aliases": ["install"]
+      }
+    }
+  }
+  
