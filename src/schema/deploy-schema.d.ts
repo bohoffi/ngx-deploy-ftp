@@ -21,5 +21,41 @@ export interface DeployOptions {
    * Skip build process during deployment.
    */
   noBuild?: boolean;
+  /**
+   * For testing: Run through without making any changes. Execute with --dry-run and nothing will happen.
+   */
+  dryRun?: boolean;
+  /**
+   * Host to connect to
+   */
+  host?: string;
+  /**
+   * Host port to connect to
+   */
+  port?: number;
+  /**
+   * Use TSL for connection
+   */
+  tsl?: boolean;
+  /**
+   * Username to login
+   */
+  username?: string;
+  /**
+   * Password to login
+   */
+  password?: string;
+  /**
+   * Remote directory path to deploy to
+   */
+  remoteDirPath?: string;
+  /**
+   * Flag if the remote directory should be emptied before deployment
+   */
+  cleanRemoteDir?: boolean;
+  /**
+   * Extend log output (using --dry-Run will set --verbose to true)
+   */
+  verbose?: boolean;
   [k: string]: unknown;
 }

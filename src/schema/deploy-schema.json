@@ -15,6 +15,47 @@
         "type": "boolean",
         "default": false,
         "description": "Skip build process during deployment."
+      },
+      "dryRun": {
+        "type": "boolean",
+        "description": "For testing: Run through without making any changes. Execute with --dry-run and nothing will happen.",
+        "default": false
+      },
+      "host": {
+        "type": "string",
+        "description": "Host to connect to"
+      },
+      "port": {
+        "type": "number",
+        "description": "Host port to connect to",
+        "default": 21
+      },
+      "tsl": {
+        "type": "boolean",
+        "description": "Use TSL for connection",
+        "default": true
+      },
+      "username": {
+        "type": "string",
+        "description": "Username to login"
+      },
+      "password": {
+        "type": "string",
+        "description": "Password to login"
+      },
+      "remoteDirPath": {
+        "type": "string",
+        "description": "Remote directory path to deploy to"
+      },
+      "cleanRemoteDir": {
+        "type": "boolean",
+        "description": "Flag if the remote directory should be emptied before deployment",
+        "default": true
+      },
+      "verbose": {
+        "type": "boolean",
+        "description": "Extend log output (using --dry-Run will set --verbose to true)",
+        "default": false
       }
     }
   }
