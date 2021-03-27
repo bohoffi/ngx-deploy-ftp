@@ -33,7 +33,7 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/bohoffi/ngx-deploy-ftp.git"
-  },  
+  },
   "bugs": {
     "url": "https://github.com/bohoffi/ngx-deploy-ftp/issues"
   },
@@ -54,5 +54,7 @@
     "@angular-devkit/core": "^9.0.0 || ^10.0.0 || ^11.0.0",
     "@angular-devkit/schematics": "^9.0.0 || ^10.0.0 || ^11.0.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "basic-ftp": "^4.6.5"
+  }
 }
