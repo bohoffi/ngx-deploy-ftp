@@ -30,15 +30,15 @@ const build = async (
 ): Promise<BuilderOutput> => {
 
     if (!context.target) {
-        throw new Error('Cannot execute the build target');
+        throw new Error('❌ Cannot execute the build target');
     }
 
     const overrides = {
         ...(options.baseHref && { baseHref: options.baseHref })
     };
 
-    context.logger.info(`� Building "${context.target.project}"`);
-    context.logger.info(`� Build target "${options.buildTarget}"`);
+    context.logger.info(`🔨 Building "${context.target.project}"`);
+    context.logger.info(`🔨 Build target "${options.buildTarget}"`);
 
     const build = await context.scheduleTarget(
         targetFromTargetString(`${options.buildTarget}`),
