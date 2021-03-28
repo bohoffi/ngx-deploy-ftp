@@ -25,9 +25,9 @@
         "description": "Host port to connect to",
         "default": 21
       },
-      "tsl": {
+      "tls": {
         "type": "boolean",
-        "description": "Use TSL for connection",
+        "description": "Use TLS for connection",
         "default": true
       },
       "username": {
@@ -45,11 +45,11 @@
       "cleanRemote": {
         "type": "boolean",
         "description": "Flag if the remote directory should be emptied before deployment",
-        "default": true
+        "default": false
       },
       "verbose": {
         "type": "boolean",
-        "description": "Extend log output (using --dry-Run will set --verbose to true)",
+        "description": "Extend log output (using --dry-run will set --verbose to true)",
         "default": false
       },
       "dryRun": {

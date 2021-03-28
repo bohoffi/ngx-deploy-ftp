@@ -13,7 +13,7 @@ export const run = async (
     try {
 
         logger.info('🔍 Verifying passed options...');
-        verifyRequiredOptions(options, logger);
+        verifyRequiredOptions(options);
         logger.info('✔️ Verified passed options');
 
 
@@ -27,17 +27,10 @@ export const run = async (
             port: options.port || 21,
             user: options.username,
             password: options.password,
-            secure: options.tsl || false
+            secure: options.tls || true
         })
 
         logger.info(`✔️ Connected to remote ${options.host}`);
-
-        if (options.verbose) {
-            logger.info('Host root directory content');
-            const curDirContent = await client.list();
-            curDirContent.map((fileInfo: FileInfo) => `${fileInfo.isDirectory ? '📁' : '📝'} ${fileInfo.name}`)
-                .join('\t');
-        }
 
         if (options.remoteDir) {
             logger.info(`🖲️ Changing to remote directory "${options.remoteDir}"`);
@@ -81,7 +74,7 @@ export const run = async (
     }
 };
 
-const verifyRequiredOptions = (options: DeployOptions, logger: logging.LoggerApi): void => {
+const verifyRequiredOptions = (options: DeployOptions): void => {
 
     if (!options.host) {
         throw new Error('Cannot deploy the application without a host');

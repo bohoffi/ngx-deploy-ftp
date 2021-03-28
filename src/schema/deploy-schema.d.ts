@@ -30,9 +30,9 @@ export interface DeployOptions {
    */
   port?: number;
   /**
-   * Use TSL for connection
+   * Use TLS for connection
    */
-  tsl?: boolean;
+  tls?: boolean;
   /**
    * Username to login
    */
