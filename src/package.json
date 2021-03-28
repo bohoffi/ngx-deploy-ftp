@@ -20,9 +20,11 @@
   "main": "index.js",
   "scripts": {
     "schema:transile": "rimraf ./schema/**.ts && json2ts -i schema/ -o schema/",
-    "prebuild": "rimraf dist && npm run schema:transile",
+    "prebuild": "rimraf ../dist && npm run schema:transile",
     "build": "tsc -p tsconfig.build.json",
-    "postbuild": "copyfiles README.md builders.json collection.json ./schema/ng-add-schema.json ./schema/deploy-schema.json package.json dist",
+    "postbuild": "npm run copy:artifacts && npm run copy:misc",
+    "copy:artifacts": "copyfiles builders.json collection.json ./schema/ng-add-schema.json ./schema/deploy-schema.json package.json ../dist",
+    "copy:misc": "copyfiles ../README.md ../LICENSE -u 1 ../dist",
     "prettier": "prettier --write ."
   },
   "schematics": "./collection.json",
