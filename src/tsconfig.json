@@ -6,7 +6,7 @@
       "module": "commonjs",
       "target": "es2015",
       "noImplicitAny": false,
-      "outDir": "dist",
+      "outDir": "../dist",
       "rootDir": ".",
       "sourceMap": true,
       "inlineSources": true,
