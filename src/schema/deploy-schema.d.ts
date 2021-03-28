@@ -16,15 +16,11 @@ export interface DeployOptions {
   /**
    * A named build target, as specified in the `configurations` section of angular.json. Each named target is accompanied by a configuration of option defaults for that target. This is equivalent to calling the command `ng build --configuration=XXX`.
    */
-  buildTarget?: string;
+  configuration?: string;
   /**
    * Skip build process during deployment.
    */
   noBuild?: boolean;
-  /**
-   * For testing: Run through without making any changes. Execute with --dry-run and nothing will happen.
-   */
-  dryRun?: boolean;
   /**
    * Host to connect to
    */
@@ -48,14 +44,18 @@ export interface DeployOptions {
   /**
    * Remote directory path to deploy to
    */
-  remoteDirPath?: string;
+  remoteDir?: string;
   /**
    * Flag if the remote directory should be emptied before deployment
    */
-  cleanRemoteDir?: boolean;
+  cleanRemote?: boolean;
   /**
    * Extend log output (using --dry-Run will set --verbose to true)
    */
   verbose?: boolean;
+  /**
+   * For testing: Run through without making any changes. Execute with --dry-run and nothing will happen.
+   */
+  dryRun?: boolean;
   [k: string]: unknown;
 }

@@ -1,5 +1,5 @@
-import { BuilderContext, BuilderOutput, targetFromTargetString } from '@angular-devkit/architect';
-import { logging } from '@angular-devkit/core';
+import { BuilderContext, BuilderOutput } from '@angular-devkit/architect';
+import { JsonObject, logging } from '@angular-devkit/core';
 
 import { DeployOptions } from 'schema/deploy-schema';
 
@@ -37,20 +37,22 @@ const build = async (
         ...(options.baseHref && { baseHref: options.baseHref })
     };
 
-    context.logger.info(`🔨 Building "${context.target.project}"`);
-    context.logger.info(`🔨 Build target "${options.buildTarget}"`);
+    context.logger.info(
+        `🔨 Building "${context.target.project}". Configuration: "${options.configuration}". ${options.baseHref ? ' Your base-href: "' + options.baseHref + '"' : ''}`
+      );
 
-    const build = await context.scheduleTarget(
-        targetFromTargetString(`${options.buildTarget}`),
+      const build = await context.scheduleTarget(
         {
-            ...{},
-            ...overrides
-        }
-    );
+          target: 'build',
+          project: context.target.project,
+          configuration: options.configuration as string
+        },
+        overrides as JsonObject
+      );
     const buildResult = await build.result;
 
     if (!buildResult.success) {
-        throw new Error('Error while building the app.');
+        throw new Error('❌ Error while building the app.');
     }
 
     return buildResult;
@@ -68,12 +70,20 @@ const deploy = async (
     options: DeployOptions
 ): Promise<void> => {
 
+    if (!context.target) {
+        throw new Error('❌ Cannot read the target options');
+    }
+
     const buildOptions = await context.getTargetOptions(
-        targetFromTargetString(`${options.buildTarget}`)
+        {
+            target: 'build',
+            project: context.target.project,
+            configuration: options.configuration as string
+          }
     );
     if (!buildOptions.outputPath || typeof buildOptions.outputPath !== 'string') {
         throw new Error(
-            `Cannot read the output path option of the Angular project '${options.buildTarget}' in angular.json`
+            `Cannot read the output path option of the Angular project '${context.target.project}' in angular.json`
         );
     }
 

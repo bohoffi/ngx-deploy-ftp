@@ -10,8 +10,8 @@ const deployBuilder = async (options: DeployOptions, context: BuilderContext): P
         throw new Error('Cannot deploy the application without a target');
     }
 
-    if (!options.buildTarget) {
-        options.buildTarget = `${context.target.project}:build:production`;
+    if (!options.configuration) {
+        options.configuration = 'production';
     }
 
     try {

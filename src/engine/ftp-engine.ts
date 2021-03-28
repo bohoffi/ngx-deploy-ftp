@@ -39,9 +39,9 @@ export const run = async (
                 .join('\t');
         }
 
-        if (options.remoteDirPath) {
-            logger.info(`🖲️ Changing to remote directory "${options.remoteDirPath}"`);
-            const cdResult = await client.cd(options.remoteDirPath);
+        if (options.remoteDir) {
+            logger.info(`🖲️ Changing to remote directory "${options.remoteDir}"`);
+            const cdResult = await client.cd(options.remoteDir);
             // a code outside the 2xx range is considered as unsuccessful
             if (cdResult.code < 200 || cdResult.code >= 300) {
                 throw new Error('Could not navigate to remote directory');
@@ -49,7 +49,7 @@ export const run = async (
             logger.info('✔️ Changed to remote directory');
         }
 
-        if (options.cleanRemoteDir) {
+        if (options.cleanRemote) {
             logger.info('🧹 Cleaning the remote directory...');
 
             if (!options.dryRun) {
