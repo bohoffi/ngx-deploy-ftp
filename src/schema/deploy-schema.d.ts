@@ -50,7 +50,7 @@ export interface DeployOptions {
    */
   cleanRemote?: boolean;
   /**
-   * Extend log output (using --dry-Run will set --verbose to true)
+   * Extend log output (using --dry-run will set --verbose to true)
    */
   verbose?: boolean;
   /**
