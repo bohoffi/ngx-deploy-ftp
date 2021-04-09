@@ -156,8 +156,6 @@ Will increase the FTP clients log output. (using `--dry-run` will set this to tr
 
 For testing: Run through **without** making any changes. Will connect to the FTP, change the working directory (if passed) and disconnect.
 
-## Configuration File TODO??
-
 ## Credits <a name="credits"></a>
 
 Props to following repositorys for inspiration and deeper understanding:
@@ -165,3 +163,4 @@ Props to following repositorys for inspiration and deeper understanding:
 - [angular-cli-ghpages](https://github.com/angular-schule/angular-cli-ghpages)
 - [ngx-deploy-docker](https://github.com/kauppfbi/ngx-deploy-docker)
 - [ngx-deploy-npm](https://github.com/bikecoders/ngx-deploy-npm)
+- [ng-deploy-azure](https://github.com/Azure/ng-deploy-azure)
