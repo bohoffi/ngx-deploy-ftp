@@ -1,0 +1,42 @@
+{
+  "name": "ngx-deploy-ftp",
+  "version": "1.0.0-next.0",
+  "description": "Deploy Angular apps to an FTP remote using the Angular CLI",
+  "keywords": [
+    "schematics",
+    "angular",
+    "cli",
+    "angular-cli",
+    "ftp",
+    "deploy",
+    "ng-deploy"
+  ],
+  "author": {
+    "name": "bohoffi",
+    "email": "bo.hoffi@gmail.com",
+    "url": "https://bohoffi.github.io/"
+  },
+  "license": "Apache-2.0",
+  "main": "index.js",
+  "schematics": "./collection.json",
+  "builders": "./builders.json",
+  "ng-add": {
+    "save": "devDependencies"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bohoffi/ngx-deploy-ftp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bohoffi/ngx-deploy-ftp/issues"
+  },
+  "homepage": "https://github.com/bohoffi/ngx-deploy-ftp#readme",
+  "peerDependencies": {
+    "@angular-devkit/architect": ">=0.900 <0.1200",
+    "@angular-devkit/core": "^9.0.0 || ^10.0.0 || ^11.0.0",
+    "@angular-devkit/schematics": "^9.0.0 || ^10.0.0 || ^11.0.0"
+  },
+  "dependencies": {
+    "basic-ftp": "^4.6.5"
+  }
+}
