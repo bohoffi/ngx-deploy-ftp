@@ -24,7 +24,9 @@
     "copy:json": "copyfiles ./src/*.json -e './src/tsconfig*.json' -u 1 ./dist",
     "copy:schemas": "copyfiles ./src/schema/*.json -u 1 ./dist",
     "copy:misc": "copyfiles ./README.md ./LICENSE ./dist",
-    "prettier": "prettier --write ."
+    "prettier": "prettier --write .",
+    "test": "jest --verbose",
+    "test:jest": "jest"
   },
   "repository": {
     "type": "git",
@@ -38,11 +40,15 @@
     "@angular-devkit/architect": ">=0.900 <0.1200",
     "@angular-devkit/core": "^9.0.0 || ^10.0.0 || ^11.0.0",
     "@angular-devkit/schematics": "^9.0.0 || ^10.0.0 || ^11.0.0",
+    "@schematics/angular": "^11.2.8",
+    "@types/jest": "^26.0.22",
     "@types/node": "^14.14.35",
     "copyfiles": "^2.4.1",
+    "jest": "^26.6.3",
     "json-schema-to-typescript": "^10.1.3",
     "prettier": "^2.2.1",
     "rimraf": "^3.0.2",
+    "ts-jest": "^26.5.4",
     "typescript": "^4.2.3"
   },
   "peerDependencies": {
@@ -52,5 +58,24 @@
   },
   "dependencies": {
     "basic-ftp": "^4.6.5"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/test/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ],
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/dist/",
+      "/assets/"
+    ]
   }
 }
