@@ -30,7 +30,7 @@ export const run = async (
             port: options.port || 21,
             user: options.username,
             password: options.password,
-            secure: options.tls || true
+            secure: options.tls ?? true
         })
 
         logger.info(`✔️ Connected to remote ${options.host}`);
