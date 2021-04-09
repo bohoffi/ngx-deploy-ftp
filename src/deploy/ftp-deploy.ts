@@ -1,7 +1,7 @@
 import { BuilderContext, BuilderOutput } from '@angular-devkit/architect';
 import { JsonObject, logging } from '@angular-devkit/core';
 
-import { DeployOptions } from 'schema/deploy-schema';
+import { DeployOptions } from '../schema/deploy-schema';
 
 export const ftpDeploy = async (
     engine: {
