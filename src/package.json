@@ -1,6 +1,6 @@
 {
   "name": "ngx-deploy-ftp",
-  "version": "1.0.0",
+  "version": "1.0.0-next.0",
   "description": "Deploy Angular apps to an FTP remote using the Angular CLI",
   "keywords": [
     "schematics",
