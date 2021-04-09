@@ -27,11 +27,11 @@ describe('ngx-deploy-ftp ftp-engine', () => {
 
     it('should pass option verification', () => {
 
-        spyOn(engine, 'verifyRequiredOptions').and.callThrough();
+        const spy = spyOn(engine, 'verifyRequiredOptions').and.callThrough();
 
         engine.verifyRequiredOptions(minRequiredOptions);
 
-        expect(engine.verifyRequiredOptions).toHaveBeenCalled();
+        expect(spy).toHaveBeenCalled();
     });
 
     it('should fail on missing host options', () => {
