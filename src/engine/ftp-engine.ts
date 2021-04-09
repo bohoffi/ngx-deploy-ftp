@@ -1,8 +1,8 @@
 import { logging } from '@angular-devkit/core';
 
-import { Client, FileInfo } from 'basic-ftp';
+import { Client } from 'basic-ftp';
 
-import { DeployOptions } from 'schema/deploy-schema';
+import { DeployOptions } from '../schema/deploy-schema';
 
 export const run = async (
     sourceDirectory: string,
@@ -16,6 +16,9 @@ export const run = async (
         verifyRequiredOptions(options);
         logger.info('✔️ Verified passed options');
 
+        if (options.dryRun) {
+            logger.warn('As --dry-Run was used nothing will get changed on the remote.');
+        }
 
         const client = new Client();
         client.ftp.verbose = options.verbose || options.dryRun || false;
@@ -74,7 +77,7 @@ export const run = async (
     }
 };
 
-const verifyRequiredOptions = (options: DeployOptions): void => {
+export const verifyRequiredOptions = (options: DeployOptions): void => {
 
     if (!options.host) {
         throw new Error('Cannot deploy the application without a host');

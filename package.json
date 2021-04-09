@@ -26,6 +26,7 @@
     "copy:misc": "copyfiles ./README.md ./LICENSE ./dist",
     "prettier": "prettier --write .",
     "test": "jest --verbose",
+    "test:watch": "jest --verbose --watch",
     "test:jest": "jest"
   },
   "repository": {
