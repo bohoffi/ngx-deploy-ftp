@@ -25,9 +25,9 @@
     "copy:schemas": "copyfiles ./src/schema/*.json -u 1 ./dist",
     "copy:misc": "copyfiles ./README.md ./LICENSE ./dist",
     "prettier": "prettier --write .",
-    "test": "jest --verbose",
-    "test:watch": "jest --verbose --watch",
-    "test:jest": "jest"
+    "test": "jest",
+    "test:verbose": "jest --verbose",
+    "test:watch": "jest --verbose --watch"
   },
   "repository": {
     "type": "git",
