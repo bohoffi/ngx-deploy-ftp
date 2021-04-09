@@ -9,7 +9,7 @@ export const checkTargetOption = (project: workspaces.ProjectDefinition, target:
         return false;
     }
     const options = (project.targets.get(target)?.options as JsonObject);
-    return options.option !== null;
+    return options[option] !== null;
 };
 
 export const addProjectTarget = (project: workspaces.ProjectDefinition, target: string, builder: string, options: any): void => {
