@@ -8,6 +8,10 @@ Deploy Angular apps to an FTP remote using the Angular CLI
 [![Apache 2.0](https://img.shields.io/badge/license-Apache%202.0-blue.svg?color=blue)](https://opensource.org/licenses/Apache-2.0)
 ![PR-builder](https://github.com/bohoffi/ngx-deploy-ftp/workflows/PR-builder/badge.svg)
 
+## ⚠️Advisory ⚠️
+
+Prefer alternative transfer protocols like HTTPS or SFTP (SSH). Use this library when you have no choice and need to use FTP. Try to use FTPS (FTP over TLS) whenever possible, FTP alone does not provide any security.
+
 * [⚠️ Prerequisites](#prerequisites)
 * [📕 Usage](#usage)
 * [📖 Options](#options)
@@ -103,7 +107,7 @@ Specifies the FTPs port to use for deployment.
 - Example:
   - `ng deploy --tls false` - turns off TLS for FTP
 
-Indicates to connect to the FTP server using TLS or not.
+Indicates to connect to the FTP server using TLS or not. (Some client may require to turn TLS off)
 
 #### --username <a name="username"></a>
 
