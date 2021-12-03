@@ -1,5 +1,5 @@
 {
-    "id": "Schema",
+    "$id": "Schema",
     "title": "DeployOptions",
     "description": "Deployment of Angular CLI applications to a remote FTP server",
     "properties": {

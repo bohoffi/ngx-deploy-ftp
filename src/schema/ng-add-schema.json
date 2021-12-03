@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/schema",
-  "id": "ngx-deploy-ftp-ng-add-schematic",
+  "$id": "ngx-deploy-ftp-ng-add-schematic",
   "title": "NgAddOptions",
   "type": "object",
   "properties": {
