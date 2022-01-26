@@ -18,7 +18,7 @@ const deployBuilder = async (options: DeployOptions, context: BuilderContext): P
         await ftpDeploy(engine, context, options);
     } catch (e) {
         context.logger.error('❌ An error occurred when trying to deploy:');
-        context.logger.error(e.message);
+        context.logger.error(e.message, e);
         return { success: false };
     }
 
