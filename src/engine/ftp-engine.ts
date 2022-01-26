@@ -72,7 +72,6 @@ export const run = async (
         }
 
     } catch (error) {
-        logger.error('❌ An error occurred!');
         throw error;
     }
 };
