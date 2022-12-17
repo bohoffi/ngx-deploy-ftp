@@ -60,7 +60,7 @@
     "@angular-devkit/schematics": "^9.0.0 || ^10.0.0 || ^11.0.0 || ^12.0.0 || ^13.0.0"
   },
   "dependencies": {
-    "basic-ftp": "^4.6.5"
+    "basic-ftp": "^5.0.0"
   },
   "jest": {
     "transform": {
@@ -96,3 +96,4 @@
     }
   }
 }
+
