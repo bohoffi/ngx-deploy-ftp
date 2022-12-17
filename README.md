@@ -12,31 +12,33 @@ Deploy Angular apps to an FTP remote using the Angular CLI
 
 Prefer alternative transfer protocols like HTTPS or SFTP (SSH). Use this library when you have no choice and need to use FTP. Try to use FTPS (FTP over TLS) whenever possible, FTP alone does not provide any security.
 
-* [⚠️ Prerequisites](#prerequisites)
-* [📕 Usage](#usage)
-* [📖 Options](#options)
-  * [--base-href](#base-href)
-  * [--configuration](#configuration)
-  * [--no-build](#no-build)
-  * [--host](#host)
-  * [--port](#port)
-  * [--tls](#tls)
-  * [--username](#username)
-  * [--password](#password)
-  * [--remote-dir](#remote-dir)
-  * [--clean-remote](#clean-remote)
-  * [--verbose](#verbose)
-  * [--dry-run](#dry-run)
-* [Credits](#credits)
+- [⚠️ Prerequisites](#prerequisites)
+- [📕 Usage](#usage)
+- [📖 Options](#options)
+  - [--base-href](#base-href)
+  - [--configuration](#configuration)
+  - [--no-build](#no-build)
+  - [--host](#host)
+  - [--port](#port)
+  - [--tls](#tls)
+  - [--username](#username)
+  - [--password](#password)
+  - [--remote-dir](#remote-dir)
+  - [--clean-remote](#clean-remote)
+  - [--verbose](#verbose)
+  - [--dry-run](#dry-run)
+- [Credits](#credits)
 
 ## ⚠️ Prerequisites
 
 This package has the following prerequisites:
-* Angular project created via [Angular CLI](https://github.com/angular/angular-cli) v9.0.0 or higher (or upgraded using `ng update`)
+
+- Angular project created via [Angular CLI](https://github.com/angular/angular-cli) v9.0.0 or higher (or upgraded using `ng update`)
 
 ## 📕 Usage
 
-1. Add `ngx-deploy-ftp` to your workspace (this command either requires a project passed using the `--project <PROJECT_NAME>` or a `defaultProject` present in your `angular.json`)
+1. Add `ngx-deploy-ftp` to your workspace (this command either requires a project passed using the `--project <PROJECT_NAME>` or the first `application` project present in your `angular.json`)
+
    ```sh
    ng add ngx-deploy-ftp
    ```
@@ -163,6 +165,7 @@ For testing: Run through **without** making any changes. Will connect to the FTP
 ## Credits <a name="credits"></a>
 
 Props to following repositorys for inspiration and deeper understanding:
+
 - [ngx-deploy-starter](https://github.com/angular-schule/ngx-deploy-starter)
 - [angular-cli-ghpages](https://github.com/angular-schule/angular-cli-ghpages)
 - [ngx-deploy-docker](https://github.com/kauppfbi/ngx-deploy-docker)
