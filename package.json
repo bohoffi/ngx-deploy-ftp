@@ -17,6 +17,7 @@
   },
   "license": "Apache-2.0",
   "scripts": {
+    "nx": "nx",
     "schema:transile": "nx exec -- rimraf ./src/schema/**.ts && json2ts -i ./src/schema/ -o ./src/schema/",
     "prebuild": "rimraf ./dist && npm run schema:transile",
     "build": "nx exec -- tsc -p ./src/tsconfig.build.json",
