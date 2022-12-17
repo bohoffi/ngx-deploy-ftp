@@ -32,14 +32,14 @@
   },
   "homepage": "https://github.com/bohoffi/ngx-deploy-ftp#readme",
   "devDependencies": {
-    "@angular-devkit/architect": ">= 0.1400 < 0.1600",
-    "@angular-devkit/core": ">= 0.1400 < 0.1600",
-    "@angular-devkit/schematics": ">= 0.1400 < 0.1600"
+    "@angular-devkit/architect": ">= 9.0.0 < 16.0.0",
+    "@angular-devkit/core": ">= 9.0.0 < 16.0.0",
+    "@angular-devkit/schematics": ">= 9.0.0 < 16.0.0"
   },
   "peerDependencies": {
-    "@angular-devkit/architect": ">= 0.1400 < 0.1600",
-    "@angular-devkit/core": ">= 0.1400 < 0.1600",
-    "@angular-devkit/schematics": ">= 0.1400 < 0.1600"
+    "@angular-devkit/architect": ">= 9.0.0 < 16.0.0",
+    "@angular-devkit/core": ">= 9.0.0 < 16.0.0",
+    "@angular-devkit/schematics": ">= 9.0.0 < 16.0.0"
   },
   "dependencies": {
     "basic-ftp": "^5.0.0"
